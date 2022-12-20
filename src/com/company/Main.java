@@ -1,8 +1,5 @@
 package com.company;
 import java.io.*;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 
 public class Main{
@@ -46,8 +43,6 @@ public class Main{
 
             List<String> data = returnData();
             HashMap<String, Character> helperMap = new HashMap<>();
-            String numberFirst;
-            String numberSecond;
             String message = "";
 
 
