@@ -77,17 +77,28 @@ public class Main{
     public static void main(String[] args) throws IOException {
             String decoded;
             Scanner userInput = new Scanner(System.in);
-            System.out.println("Enter text for Poem Code:");
-            String message = userInput.nextLine();
-            List<String> letters = encrypting(message);
+
             System.out.println("Choose option 1/2 -> encrypting/decrypting");
             Scanner userChoice = new Scanner(System.in);
             String userCh = userChoice.nextLine();
+            List<String> letters = new ArrayList<>();
 
             if(userCh.equals("1")){
+                System.out.println("Enter text for Poem Code:");
+                String message = userInput.nextLine();
+                letters = encrypting(message);
                 System.out.println(letters);
             }
             if (userCh.equals("2")){
+                while(true){
+                    System.out.println("Do you want ton enter more text? Y/N");
+                    String msgch = userInput.nextLine();
+                    if(msgch.equals("N")) break;
+                    System.out.println("Enter text for decrypting:");
+                    String decmsg = userInput.nextLine();
+                    letters.add(decmsg);
+                }
+
                 if(letters.isEmpty()) System.out.println("No message for encryption provided");
                 else{
                     decoded = decrypting(letters);
